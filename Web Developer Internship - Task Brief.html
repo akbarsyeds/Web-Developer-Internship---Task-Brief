@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Action Pledge | Make Your Commitment Count</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E8B57;
+            --primary-light: #3CB371;
+            --secondary: #1E6B52;
+            --accent: #FFD700;
+            --light: #F5F5F5;
+            --dark: #333333;
+            --gray: #777777;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.9), rgba(30, 107, 82, 0.9)), url('https://images.unsplash.com/photo-1569163139394-de44cb2c8cb7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* KPIs Section */
+        .kpis {
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .kpi-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .kpi-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .kpi-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .kpi-label {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        /* Why Section */
+        .why {
+            background-color: var(--light);
+        }
+        
+        .why-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background-color: white;
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .checkbox-item input {
+            width: auto;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        .theme-title {
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .privacy-note {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Certificate Section */
+        .certificate-section {
+            display: none;
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .certificate {
+            background-color: white;
+            border: 15px solid var(--primary);
+            padding: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .certificate h2 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .certificate h3 {
+            color: var(--primary);
+            margin: 30px 0 10px;
+        }
+        
+        .hearts-rating {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin: 20px 0;
+        }
+        
+        .certificate-id {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* Pledge Wall */
+        .pledge-wall {
+            background-color: white;
+        }
+        
+        .pledge-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: var(--shadow);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .pledge-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .pledge-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pledge-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .love-rating {
+            color: #ff6b6b;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .kpi-item {
+                min-width: 150px;
+            }
+            
+            .certificate {
+                padding: 30px 20px;
+            }
+            
+            .pledge-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Join the Climate Action Movement</h1>
+            <p>Your individual actions add up to powerful collective impact. Take the pledge today and be part of the solution.</p>
+            <a href="#pledge-form" class="btn">Take the Pledge</a>
+        </div>
+    </section>
+
+    <!-- KPIs Section -->
+    <section class="kpis">
+        <div class="container">
+            <div class="kpi-container">
+                <div class="kpi-item">
+                    <div class="kpi-value">1,000,000</div>
+                    <div class="kpi-label">Target Pledges</div>
+                </div>
+                <div class="kpi-item">
+                    <div class="kpi-value" id="achieved-pledges">12,487</div>
+                    <div class="kpi-label">Achieved Pledges</div>
+                </div>
+                <div class="kpi-item">
+                    <div class="kpi-value" id="students-count">7,432</div>
+                    <div class="kpi-label">Students</div>
+                </div>
+                <div class="kpi-item">
+                    <div class="kpi-value" id="professionals-count">4,125</div>
+                    <div class="kpi-label">Working Professionals</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why">
+        <div class="container">
+            <div class="why-content">
+                <h2>Why Take Climate Action?</h2>
+                <p>Climate change is the defining challenge of our generation. While global solutions are essential, individual actions create a ripple effect that inspires communities, influences policies, and accelerates the transition to a sustainable future.</p>
+                <p>By taking this pledge, you're joining a global movement of people committed to making a difference. Your commitment matters - it shows leaders that we care, it inspires others to act, and it creates tangible change in our daily lives.</p>
+                <p>Together, our small actions add up to monumental impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pledge Form -->
+    <section class="form-section" id="pledge-form">
+        <div class="container">
+            <h2>Make Your Climate Pledge</h2>
+            <div class="form-container">
+                <form id="pledgeForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state" name="state">
+                            <option value="">Select your state</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <!-- Add more states as needed -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="profile">Profile Type *</label>
+                        <select id="profile" name="profile" required>
+                            <option value="">Select your profile</option>
+                            <option value="student">Student</option>
+                            <option value="professional">Working Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Select Your Climate Commitments</label>
+                        
+                        <div class="theme-title">Energy Conservation</div>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment1" name="commitments" value="Switch to LED bulbs">
+                                <label for="commitment1">Switch to LED light bulbs</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment2" name="commitments" value="Unplug electronics when not in use">
+                                <label for="commitment2">Unplug electronics when not in use</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment3" name="commitments" value="Use energy-efficient appliances">
+                                <label for="commitment3">Use energy-efficient appliances</label>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-title">Transportation</div>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment4" name="commitments" value="Walk or bike for short trips">
+                                <label for="commitment4">Walk or bike for short trips</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment5" name="commitments" value="Use public transportation">
+                                <label for="commitment5">Use public transportation when possible</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment6" name="commitments" value="Carpool with colleagues">
+                                <label for="commitment6">Carpool with colleagues or friends</label>
+                            </div>
+                        </div>
+                        
+                        <div class="theme-title">Waste Reduction</div>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment7" name="commitments" value="Reduce single-use plastics">
+                                <label for="commitment7">Reduce single-use plastics</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment8" name="commitments" value="Compost food waste">
+                                <label for="commitment8">Compost food waste</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="commitment9" name="commitments" value="Buy products with less packaging">
+                                <label for="commitment9">Buy products with less packaging</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="privacy-note">
+                        <i class="fas fa-shield-alt"></i> Privacy Note: Your mobile number and email are required for validation but will never be shown publicly. Your data will be used only for verification and engagement purposes.
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Submit Pledge</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section class="certificate-section" id="certificate">
+        <div class="container">
+            <h2>Your Climate Action Certificate</h2>
+            <div class="certificate">
+                <h2>Certificate of Climate Action</h2>
+                <p>This certifies that</p>
+                <h3 id="certificate-name">[Name]</h3>
+                <p>has taken the Climate Action Pledge and is</p>
+                <h3>"Cool Enough to Care!"</h3>
+                <div class="hearts-rating" id="hearts-rating">
+                    <!-- Hearts will be inserted here -->
+                </div>
+                <p>By making commitments to reduce their environmental impact, this individual is contributing to a sustainable future for our planet.</p>
+                <div class="certificate-id">Pledge ID: <span id="pledge-id">CAP-0000</span></div>
+            </div>
+            <button class="btn" style="margin-top: 30px;" onclick="printCertificate()">Print Certificate</button>
+        </div>
+    </section>
+
+    <!-- Pledge Wall -->
+    <section class="pledge-wall">
+        <div class="container">
+            <h2>Climate Action Pledge Wall</h2>
+            <p>See how others are making a difference. Join our growing community of climate champions!</p>
+            
+            <table class="pledge-table">
+                <thead>
+                    <tr>
+                        <th>Pledge ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>State</th>
+                        <th>Profile</th>
+                        <th>Love for Planet</th>
+                    </tr>
+                </thead>
+                <tbody id="pledge-wall-body">
+                    <!-- Pledge entries will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Climate Action Pledge</h3>
+                <p>Together, we can create a sustainable future for our planet.</p>
+                <p>© 2023 Climate Action Pledge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data for the pledge wall
+        const samplePledges = [
+            { id: 'CAP-1245', name: 'Alex Johnson', date: '2023-10-15', state: 'CA', profile: 'Student', commitments: 5 },
+            { id: 'CAP-1246', name: 'Maria Garcia', date: '2023-10-16', state: 'TX', profile: 'Working Professional', commitments: 7 },
+            { id: 'CAP-1247', name: 'James Wilson', date: '2023-10-17', state: 'NY', profile: 'Other', commitments: 3 },
+            { id: 'CAP-1248', name: 'Sarah Chen', date: '2023-10-18', state: 'WA', profile: 'Student', commitments: 6 },
+            { id: 'CAP-1249', name: 'David Brown', date: '2023-10-19', state: 'FL', profile: 'Working Professional', commitments: 4 }
+        ];
+
+        // Initialize the pledge wall with sample data
+        function initializePledgeWall() {
+            const pledgeWallBody = document.getElementById('pledge-wall-body');
+            
+            samplePledges.forEach(pledge => {
+                const row = document.createElement('tr');
+                
+                // Generate hearts based on number of commitments
+                let hearts = '';
+                for (let i = 0; i < Math.min(pledge.commitments, 9); i++) {
+                    hearts += '<i class="fas fa-heart love-rating"></i> ';
+                }
+                
+                row.innerHTML = `
+                    <td>${pledge.id}</td>
+                    <td>${pledge.name}</td>
+                    <td>${pledge.date}</td>
+                    <td>${pledge.state}</td>
+                    <td>${pledge.profile}</td>
+                    <td>${hearts}</td>
+                `;
+                
+                pledgeWallBody.appendChild(row);
+            });
+        }
+
+        // Handle form submission
+        document.getElementById('pledgeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const state = document.getElementById('state').value;
+            const profile = document.getElementById('profile').value;
+            
+            // Count selected commitments
+            const commitmentCheckboxes = document.querySelectorAll('input[name="commitments"]:checked');
+            const commitmentCount = commitmentCheckboxes.length;
+            
+            // Generate a random pledge ID
+            const pledgeId = 'CAP-' + Math.floor(1000 + Math.random() * 9000);
+            
+            // Update the certificate
+            document.getElementById('certificate-name').textContent = name;
+            document.getElementById('pledge-id').textContent = pledgeId;
+            
+            // Generate hearts based on number of commitments
+            const heartsRating = document.getElementById('hearts-rating');
+            heartsRating.innerHTML = '';
+            for (let i = 0; i < Math.min(commitmentCount, 9); i++) {
+                const heart = document.createElement('i');
+                heart.className = 'fas fa-heart';
+                heart.style.color = '#ff6b6b';
+                heart.style.margin = '0 2px';
+                heartsRating.appendChild(heart);
+            }
+            
+            // Show the certificate section
+            document.querySelector('.certificate-section').style.display = 'block';
+            
+            // Scroll to the certificate
+            document.getElementById('certificate').scrollIntoView({ behavior: 'smooth' });
+            
+            // Update KPIs (simulated)
+            updateKPIs();
+            
+            // Add to pledge wall
+            addToPledgeWall(pledgeId, name, state, profile, commitmentCount);
+            
+            // Reset form
+            document.getElementById('pledgeForm').reset();
+        });
+
+        // Update KPIs (simulated)
+        function updateKPIs() {
+            const achievedPledges = document.getElementById('achieved-pledges');
+            const studentsCount = document.getElementById('students-count');
+            const professionalsCount = document.getElementById('professionals-count');
+            
+            // Increment counts (simulated)
+            achievedPledges.textContent = (parseInt(achievedPledges.textContent.replace(/,/g, '')) + 1).toLocaleString();
+            
+            // Randomly update student/professional counts (simulated)
+            if (Math.random() > 0.5) {
+                studentsCount.textContent = (parseInt(studentsCount.textContent.replace(/,/g, '')) + 1).toLocaleString();
+            } else {
+                professionalsCount.textContent = (parseInt(professionalsCount.textContent.replace(/,/g, '')) + 1).toLocaleString();
+            }
+        }
+
+        // Add new pledge to the pledge wall
+        function addToPledgeWall(id, name, state, profile, commitments) {
+            const pledgeWallBody = document.getElementById('pledge-wall-body');
+            const today = new Date().toISOString().split('T')[0];
+            
+            // Generate hearts based on number of commitments
+            let hearts = '';
+            for (let i = 0; i < Math.min(commitments, 9); i++) {
+                hearts += '<i class="fas fa-heart love-rating"></i> ';
+            }
+            
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${id}</td>
+                <td>${name}</td>
+                <td>${today}</td>
+                <td>${state}</td>
+                <td>${profile}</td>
+                <td>${hearts}</td>
+            `;
+            
+            // Add to the top of the table
+            pledgeWallBody.insertBefore(row, pledgeWallBody.firstChild);
+        }
+
+        // Print certificate
+        function printCertificate() {
+            const certificate = document.querySelector('.certificate');
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Climate Action Certificate</title>
+                    <style>
+                        body { 
+                            font-family: Arial, sans-serif; 
+                            text-align: center; 
+                            padding: 50px;
+                        }
+                        .certificate { 
+                            border: 15px solid #2E8B57; 
+                            padding: 50px; 
+                            max-width: 800px; 
+                            margin: 0 auto;
+                        }
+                        h2 { color: #1E6B52; }
+                        h3 { color: #2E8B57; }
+                        .hearts-rating { 
+                            font-size: 2rem; 
+                            color: #ff6b6b; 
+                            margin: 20px 0; 
+                        }
+                        .certificate-id { 
+                            margin-top: 30px; 
+                            font-size: 0.8rem; 
+                            color: #777; 
+                            text-align: right;
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${certificate.outerHTML}
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        // Initialize the page
+        window.onload = function() {
+            initializePledgeWall();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        };
+    </script>
+</body>
+</html>
